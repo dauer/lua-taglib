@@ -2,8 +2,8 @@ package.cpath = package.cpath .. ";./lib/?.so"
 require "taglib"
 
 --[[
-  This file shows what TagLib functions are supportted by lua-taglib
-  and how to use them
+  This file shows what TagLib functions are supported by lua-taglib
+  and how to use them.
   ]]--
 
 success = taglib.file('music.mp3')
