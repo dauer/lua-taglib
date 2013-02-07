@@ -11,7 +11,7 @@ lua-taglib is very early in development, expect errors!
 ## Requirements ##
 * lua5.2
 * liblua5.2-0-dev
-* TagLib
+* TagLib (libtag1-dev)
 
 ## Documentation ##
 Build the library using the Makefile in the ./src folder.
@@ -23,4 +23,4 @@ Then have a look at the 'example.lua' file to see how to use the library.
 Add Lua support for more of the TagLib library functions
 
 More testing...
-I have only testet the library with using a single mp3 file on my Ubuntu 12.10 Linux...
+I have only testet the library using a single mp3 file on my Ubuntu 12.10 Linux...
