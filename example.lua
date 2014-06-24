@@ -1,5 +1,5 @@
 package.cpath = package.cpath .. ";./lib/?.so"
-require "taglib"
+local taglib = require "taglib"
 
 --[[
   This file shows what TagLib functions are supported by lua-taglib

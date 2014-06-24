@@ -76,17 +76,23 @@ static int channels(lua_State *L)
     return 1;
 }
 
-extern "C" void luaopen_taglib(lua_State* L)
+static const luaL_Reg API[] = {
+    {"file", file },
+    { "tag", tag },
+    { "length", length },
+    { "bitrate", bitrate },
+    { "sampleRate", sampleRate },
+    { "channels", channels },
+    { NULL, NULL },
+};
+
+LUALIB_API "C" int luaopen_taglib(lua_State* L)
 {
-    const luaL_Reg API[] = { 
-        { "file", file },
-        { "tag", tag },
-        { "length", length },
-        { "bitrate", bitrate },
-        { "sampleRate", sampleRate },
-        { "channels", channels },
-        { NULL, NULL },
-    };
-    luaL_newlib(L, API);
-    lua_setglobal(L, "taglib");
+    lua_newtable(L);
+#if LUA_VERSION_NUM < 502
+    luaL_register(L, NULL , API);
+#else 
+    luaL_setfuncs(L, API, 0);
+#endif
+    return 1;
 }
